@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <header class = "w3-center">
+        <img class="w3-image" src= {% static "pages/images/36936.jpg" %} alt="chemical glassware with coloured solutions" style="width:100%;">
+        <div class="w3-right-align"><a class="w3-text-dark-gray"  href="http://www.freepik.com"><small>Image Credit: Designed by brgfx / Freepik</small></a></div>
+        <div class="w3-panel w3-text-orange">
+            <h1><b>Chemistry Lessons</b></h1>
+        </div>
+    </header>
+    <div class="w3-bar w3-orange w3-round">
+        <a href="#" class="w3-bar-item w3-button">KS3</a>
+        <a href="#" class="w3-bar-item w3-button">GCSE</a>
+        <a href="#" class="w3-bar-item w3-button">A Level</a>
+        <a href="#" class="w3-bar-item w3-button w3-right">Log Out</a>
+    </div>
+    <div class="w3-center" >
+        <div class ="w3-text-orange">
+            <div class="w3-container">
+                <h3>Welcome to chemistrylessons.co.uk</h3>
+                <h3>Covers the UK chemistry curriculum from KS3 to A-Level</h3>
+            </div>
+        </div>
+        <div class = "w3-row w3-orange">
+            <div class="w3-col s6 m4 l4" >
+                <h4>Students</h4>
+                <img class="w3-image w3-image1" src= {% static "pages/images/1529291032.svg" %} alt="chemistry students">
+                <p>Improve your chemistry grade</br>Video Lessons</br>Study at your pace</br>Worksheets for Exam Prep</br>Answers included</p>
+            </div>
+            <div class="w3-col s6 m4 l4">
+                <h4>Teachers</h4>
+                <img class="w3-image w3-image2" src= {% static "pages/images/1545657082.svg" %} alt="chemistry teacher">
+                <p>Save time planning</br>Flipped Learning</br>Independent Learning</br>Homework</br>Extend Learning</br>Cover Work</p></br>
+            </div>
+            <div class="w3-col s12 m4 l4" >
+                <h4>Parents</h4>
+                <img class="w3-image w3-image3" src= {% static "pages/images/1526078043.svg" %} alt="worried parent">
+                <p>Worried about your child's progress?</br>Cheap, effective alternative to private tuition</br>Improve your subject knowledge</br>
+                Exam Focused</br>Answers included</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

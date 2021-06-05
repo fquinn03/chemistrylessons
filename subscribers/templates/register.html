@@ -1,10 +1,37 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
 {% load static %}
 {% block content %}
-    <form method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <br>
-        <input type="submit" value ="Register"/>
-    </form>
+
+    <div>
+        <h1 class="w3-display-topmiddle w3-text-orange w3-center"><b>Chemistry Lessons</b></h1>
+    </div>
+
+    <div class="w3-display-middle w3-orange w3-card-4 w3-padding-large w3-round-xlarge w3-text-dark-grey">
+        <div class="w3-center">
+            <h4>Register to start using Chemistry Lessons</h4>
+        </div>
+        <table>
+        <form method="POST">
+            {% csrf_token %}
+            {% for field in form.visible_fields %}
+            <tr>
+              <td>
+              <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+              </td>
+              <td>
+                {{ field }}
+                {% for error in field.errors %}
+                  <span class="help-block">{{ error }}</span>
+              </td>
+            </tr>
+                {% endfor %}
+              </div>
+            {% endfor %}
+        </table>
+            <input class="w3-button w3-right w3-dark-grey w3-round-large" type="submit" value ="Register"/>
+        </form>
+    </div>
 {% endblock %}
+

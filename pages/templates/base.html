@@ -12,15 +12,12 @@
         <link rel="stylesheet" type="text/css" href="{% static 'pages/w3.css' %}">
     </head>
     <body class="w3-container w3-dark-gray w3-monospace">
-        <div class="w3-display-container"
-            {% block content %}
-            {% endblock %}
-            <div>
-                <footer class="w3-display-bottommiddle">
-                    <small><p class>Email: chemistrylessons.co.uk@gmail.com</p></small>
-                </footer>
-            </div>
-        </div>
+        {% block content %}
+
+        {% endblock %}
     </body>
+    <footer class="w3-center">
+        <p><small>www.chemistrylessons.co.uk@gmail.com</small></p>
+    </footer>
 
 </html>

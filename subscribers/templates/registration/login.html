@@ -2,17 +2,18 @@
 {% load static %}
 {% block content %}
     <div>
-        <h1 class="w3-text-orange w3-display-topmiddle"><b>Chemistry Lessons</b></h1>
+        <h1 class="w3-text-orange w3-center"><b>Chemistry Lessons</b></h1>
     </div>
-    <div class="w3-display-middle w3-orange w3-card-4 w3-padding-large w3-round-xlarge w3-text-dark-grey">
-        <div class="w3-center">
+    <div class="w3-mobile w3-container w3-container-centered">
+        <div class="w3-center w3-orange w3-card-4 w3-padding-large w3-round-xlarge w3-text-dark-grey" >
             <h4>Sign In to continue</h4>
+            <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button class ="w3-button w3-right w3-dark-grey w3-round-large" type="submit">Log In</button>
+              </br></br>
+            </form>
         </div>
-        <form method="post">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <button class ="w3-button w3-right w3-dark-grey w3-round-large" type="submit">Log In</button>
-        </form>
     </div>
 
 {% endblock %}

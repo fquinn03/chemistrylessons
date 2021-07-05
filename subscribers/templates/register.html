@@ -8,31 +8,38 @@
 
     <div class="w3-mobile w3-container-centered w3-orange w3-card-4 w3-padding-large w3-round-xlarge w3-text-dark-grey" >
         <div class="w3-center ">
+            <h6>Already have an account then please <a style="color:blue" href="../subscribers/login/">Sign In</a></h6>
+        </div>
+        <div class="w3-center ">
             <h4>Register to start using Chemistry Lessons</h4>
         </div>
-        <table style="height:75%;">
             <form method="POST">
                 {% csrf_token %}
-                {% for field in form.visible_fields %}
-                <tr>
-                  <td>
-                  <div class="form-group">
-                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                  </td>
-                  <td>
-                    {{ field }}
-                    {% for error in field.errors %}
-                      <span class="help-block">{{ error }}</span>
-                  </td>
-                  <td></td>
-                </tr>
-                    {% endfor %}
-                  </div>
-                {% endfor %}
-            </form>
-        </table>
-        <input class="w3-button w3-right w3-dark-grey w3-round-large" type="submit" value ="Register"/>
-        </br></br>
+            <table>
+                {% for field in form %}
+                    <tr>
+                      <td>
+                          {{ field.label_tag }}
+                      </td>
+                      <td>
+                       {{ field }}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                          {% if field.help_text %}
+                            <small style="color: white">{{ field.help_text|safe }}</small>
+                          {% endif %}
+                          {% for error in field.errors %}
+                            <p style="color: red">{{ error|safe }}</p>
+                          {% endfor %}
+                      </td>
+                    </tr>
+                  {% endfor %}
+                </table>
+            <input class="w3-button w3-right w3-dark-grey w3-round-large" type="submit" value ="Register"/>
+            </br></br>
+        </form>
 
     </div>
 {% endblock %}

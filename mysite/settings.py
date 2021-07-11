@@ -27,6 +27,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['www.chemistrylessons.co.uk']
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'chemistrylessons.co.uk@gmail.com'
+EMAIL_HOST_PASSWORD = 'bfomzzijfasaxnnh'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'ChemistryLessons Team <noreply@chemistrylessons.com>'
+
+
 
 # Application definition
 
@@ -37,7 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'widget_tweaks',
     'pages',
     'resources',
     'subscribers',
@@ -137,3 +145,4 @@ MEDIA_ROOT = '/home/chemistrylessons/mysite/media'
 MEDIA_URL = '/media/'
 STATIC_ROOT = '/home/chemistrylessons/mysite/static'
 STATIC_URL = '/static/'
+

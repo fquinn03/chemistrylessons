@@ -24,7 +24,7 @@ TEMP_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = '33^fax4ioe5-+%*_a#+v3c3&yttl&z2obvo(4aht8pn(8p%vsl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -33,8 +33,8 @@ ALLOWED_HOSTS = ['www.chemistrylessons.co.uk']
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = 'chemistrylessons.co.uk@gmail.com'
+EMAIL_HOST_PASSWORD = 'bfomzzijfasaxnnh'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'ChemistryLessons Team <noreply@chemistrylessons.com>'
@@ -95,9 +95,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': env('DATABASE_NAME'),
+        'NAME': 'chemistrylessons$sprocketdb',
         'USER': 'chemistrylessons',
-        'PASSWORD': env('DATABASE_PASSWORD'),
+        'PASSWORD': 'pG0BwI6OW5!',
         'HOST': 'chemistrylessons.mysql.pythonanywhere-services.com',
         'OPTIONS':{'init_command': "SET sql_mode='STRICT_ALL_TABLES'",
         }

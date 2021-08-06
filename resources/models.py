@@ -1,24 +1,36 @@
 from django.db import models
 
 # Create your models here.
-class Lesson(models.Model):
-    topic = models.ForeignKey('Topic', on_delete=models.CASCADE)
-    title = models.CharField(max_length=100, blank=False, null=False)
-    number = models.IntegerField()
-    location = models.CharField(max_length=100, blank=False, null=False)
 
-    class Meta:
-        managed = True
-        db_table = 'lesson'
+class Resource(models.Model):
+    SHORTANSWERQUIZ = 'SAQ'
+    KEYWORDMATCHING = 'KWM'
+    NOTES = 'N'
+    PRACTICEDRILLS = 'PD'
+    VIDEO = 'video'
+    PDF = 'PDF'
+    WORD = 'Word'
 
-class Topic(models.Model):
+    TYPES = [
+        (SHORTANSWERQUIZ, 'Short Answer Quiz'),
+        (KEYWORDMATCHING, 'Keyword Matching'),
+        (NOTES , 'Notes'),
+        (PRACTICEDRILLS, 'Practice Drills'),
+    ]
 
-    title = models.CharField(max_length=100, blank=False, null=False)
-    level = models.CharField(max_length=10, blank=True, null=True)
+    FORMATS = [
+        (VIDEO, 'Video'),
+        (PDF, 'PDF'),
+        (WORD, 'Word'),
+    ]
 
-    class Meta:
-        managed = True
-        db_table = 'topic'
+    title = models.CharField(max_length=50)
+    topic = models.CharField(max_length=50)
+    free = models.BooleanField(default=False)
+    description = models.CharField(max_length=300)
+    type = models.CharField(max_length=3, choices=TYPES)
+    format = models.CharField(max_length=20, choices=FORMATS)
+    link = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.title
+        return self.topic+": "+self.title

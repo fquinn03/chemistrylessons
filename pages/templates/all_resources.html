@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div>
+        <h1 class="w3-center w3-text-orange"><b>Chemistry Lessons</b></h1>
+    </div>
+    <h3>Short Answer Questions</h3>
+    {% for resource in all_resources %}
+        <h5>{{ resource.title }}</h5></br>
+        <table>
+            <th>
+
+            <td>
+                <video video controls="controls" src= "{{ resource.link }}" style="width:25%">
+                Your browser does not support the HTML5 Video element.
+                </video>
+            </td>
+            </th>
+        </table>
+
+    {% endfor %}
+{% endblock %}

@@ -8,7 +8,6 @@ def home(request):
     return render(request, 'home.html', {})
 
 def all_resources(request):
-    all_resources = Resource.objects.filter(type="SAQ")
-    context = {'all_resources': all_resources}
-
-    return render(request, 'all_resources.html', context)
+    saqs = Resource.objects.filter(type="SAQ")
+    notes = Resource.objects.filter(type="N")
+    return render(request, 'all_resources.html', {'saqs': saqs, 'notes':notes})

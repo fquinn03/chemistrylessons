@@ -8,6 +8,8 @@ def home(request):
     return render(request, 'home.html', {})
 
 def all_resources(request):
-    saqs = Resource.objects.filter(type="SAQ")
-    notes = Resource.objects.filter(type="N")
-    return render(request, 'all_resources.html', {'saqs': saqs, 'notes':notes})
+    topic = request.POST.get('topic')
+    resources = Resource.objects.all()
+    resources = resources.filter(topic = topic)
+
+    return render(request, 'all_resources.html', {'resources': resources })

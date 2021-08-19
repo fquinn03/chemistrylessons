@@ -6,18 +6,44 @@
             <img class="w3-image" src= {% static "pages/images/36936.jpg" %} alt="chemical glassware with coloured solutions" style="width:100%;">
             <div class="w3-right-align"><a class="w3-text-dark-gray"  href="http://www.freepik.com"><small>Image Credit: Designed by brgfx / Freepik</small></a></div>
         </div>
-        <div>
-            <h1 class="w3-center w3-text-orange"><b>Chemistry Lessons</b></h1>
+        <div class="w3-center w3-text-orange">
+            <h1><b>Chemistry Lessons</b></h1>
+            <div class ="w3-container w3-text-orange">
+                <h3>Welcome to chemistrylessons.co.uk</h3>
+                <h3>Covers the UK GCSE chemistry curriculum </h3>
+            </div>
         </div>
     </header>
-    <div class="w3-bar w3-orange w3-round">
-        <a href="{% url 'all_resources' %}" class="w3-bar-item w3-button w3-border">All Resources</a>
-    </div>
-    <div class="w3-center" >
-        <div class ="w3-container w3-text-orange">
-            <h3>Welcome to chemistrylessons.co.uk</h3>
-            <h3>Covers the UK GCSE chemistry curriculum </h3>
+    <form method="post" action="{% url 'all_resources' %}">
+        {% csrf_token %}
+        <div class="w3-bar w3-orange w3-round">
+          <label for="topic" class="w3-bar-item w3-orange">
+              <select id="topic" name="topic">
+                <option value="" disabled selected>Search by topic</option>
+                <option value="KC">Key concepts in chemistry</option>
+                <option value="SLG&M">States of matter and mixtures</option>
+                <option value="CC">Chemical changes</option>
+                <option value="EM&E">Extracting metals and equilibria</option>
+                <option value="PT">Groups in the Periodic Table</option>
+                <option value="ROR">Rates of reaction and energy changes</option>
+                <option value="F&ES">Fuels and earth science</option>
+              </select>
+            </label>
+            <label for="type" class="w3-bar-item w3-orange">
+              <select id="type" name="type">
+                <option value="" disabled selected>Search by type</option>
+                <option value="SAQ">Short answer quiz</option>
+                <option value="KWM">Keyword matching</option>
+                <option value="N">Notes</option>
+                <option value="PD">Practice drills</option>
+              </select>
+            </label>
+            <input class="w3-bar-item w3-button w3-round w3-light-grey w3-text-dark-grey w3-hover-dark-grey w3-hover-text-white
+            w3-border-left w3-border-right w3-border-dark-grey w3-right w3-margin-right" type="submit" value="Search">
         </div>
+    </form>
+    </br>
+    <div class="w3-center" >
         <div class = "w3-container w3-orange w3-round" style="padding-left:2%;">
             <div class="w3-row">
                 <div class="w3-col s6 m4 l4" >
